@@ -1,0 +1,64 @@
+;IR code
+;LABEL main
+;LINK 
+;STOREF 1.0 $T1
+;STOREF $T1 r9
+;STOREF 2.0 $T2
+;STOREF $T2 r10
+;STOREF 3.14159 $T3
+;STOREF $T3 r11
+;WRITEF r9
+;WRITES newline
+;WRITEF r11
+;WRITES newline
+;WRITEF r10
+;WRITES newline
+;STOREF 2.0 $T4
+;DIVF r11 $T4 $T5
+;STOREF $T5 r9
+;DIVF r11 r10 $T6
+;STOREF $T6 r10
+;WRITEF r9
+;WRITES newline
+;WRITEF r10
+;WRITES newline
+;ADDF r9 r10 $T7
+;STOREF $T7 t
+;WRITEF t
+;WRITES newline
+;RET
+;tinr10 code
+var r9
+var r10
+var r11
+var t
+str newline "\n"
+move 1.0 r1
+move r1 r9
+move 2.0 r2
+move r2 r10
+move 3.14159 r3
+move r3 r11
+sys writer r9 
+sys writes newline
+sys writer r11 
+sys writes newline
+sys writer r10 
+sys writes newline
+move 2.0 r4
+move r11 r5
+divr r4 r5
+move r5 r9
+move r11 r6
+divr r10 r6
+move r6 r10
+sys writer r9 
+sys writes newline
+sys writer r10 
+sys writes newline
+move r9 r7
+addr r10 r7
+move r7 t
+sys writer t 
+sys writes newline 
+sys halt

@@ -1,0 +1,31 @@
+PROGRAM multiply
+BEGIN
+
+
+	INT a, b, c, d, e, f;
+	STRING alert := "Enter two integers";
+	STRING sumAlert := "The sum of these two integers is";
+	STRING diffAlert := "The difference of these two integers is";
+	STRING productAlert := "The product of these two integers is";
+	STRING quotientAlert := "The quotient of these two integers is";
+	STRING space := " ";
+	STRING newLine := "\n";
+	
+	FUNCTION VOID main()
+	BEGIN
+	
+		WRITE(alert);
+		READ(a,b);
+		
+		c := a + b;
+		d := a - b;
+		e := a * b;
+		f := a / b;
+
+		WRITE(sumAlert, space, c, newLine);
+		WRITE(diffAlert, space, d, newLine);
+		WRITE(productAlert, space, e, newLine);
+		WRITE(quotientAlert, space, f);
+	
+	END
+END
